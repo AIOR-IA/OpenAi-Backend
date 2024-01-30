@@ -43,7 +43,6 @@ const completion = await openai.chat.completions.create({
             type: 'json_object'
         }
     });
-    // console.log(completion);
     const jsonResp = JSON.parse(completion.choices[0].message.content);
 
     return jsonResp;
