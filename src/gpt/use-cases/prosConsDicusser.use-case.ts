@@ -16,7 +16,7 @@ const completion = await openai.chat.completions.create({
             { 
                 role: "system", 
                 content: `
-                    I'm going to provide you a question and your task is return a response with pros and cons,
+                    I'm going to provide you a question and your task is return a response in Spanish with pros and cons,
                     the response must be in markdown format,
                     the pros and cons should be in a list.
                     `
@@ -31,8 +31,7 @@ const completion = await openai.chat.completions.create({
         max_tokens: 150,
 
     });
-
-    return completion.choices[0].message.content;
+    return completion.choices[0].message;
 
 
 }
